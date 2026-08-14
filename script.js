@@ -1,4 +1,4 @@
-//adding comment for my own understanding for later ---STEP BY STEP GUIDE --
+//adding comment for my own understanding for later ---STEP BY STEP GUIDE
 //checks if display is empty
 //show clicked buttons on display, only show operator if display not empty
 //make clear button work by changing textContent of dispay to ''
@@ -17,18 +17,27 @@ function isDisplayEmpty() {
 }
 
 //get stuff we click to show up on display
-let nums = document.querySelectorAll('.num');
+const nums = document.querySelectorAll('.num');
 nums.forEach((num) => {
     num.addEventListener('click', () => {
         document.getElementById("display").textContent += num.textContent; //add what you click into display
     });
 })
 
-let ops = document.querySelectorAll('.op');
+const ops = document.querySelectorAll('.op');
 ops.forEach((op) => {
     op.addEventListener('click', () => {
         if (!isDisplayEmpty()) { //check if display empty EVERYTIME we click an operator
-            document.getElementById("display").textContent += op.textContent;
+            let display = document.getElementById("display");
+            let currentText = display.textContent;
+            let lastChar = currentText.slice(-1);
+            if (['+', '-', '*', '/'].includes(lastChar)) {
+                display.textContent = currentText.slice(0, -1) + op.textContent; // if u press multiple operator then
+                // it will change current operator to that
+            }
+            else {
+                document.getElementById("display").textContent += op.textContent;
+            }
         }
     });
 })
@@ -80,11 +89,11 @@ function calculate() {
     if (!userInputTokens) return;
 
     const finalResult = userInputTokens.reduce((acc, curr, ind) => {
-        if(ind%2 == 0) return acc;
+        if (ind % 2 == 0) return acc;
 
         const operator = curr;
 
-         const nextNumber = parseFloat(userInputTokens[ind + 1]);
+        const nextNumber = parseFloat(userInputTokens[ind + 1]);
 
 
         const mathOperation = operators[operator];
