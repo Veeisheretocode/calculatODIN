@@ -1,0 +1,65 @@
+/* hover color- #eae3c8 */
+
+h1{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 20px;
+    background-color: #e3d082;
+    margin-left: auto;
+    margin-right: auto;
+    width: 33%;
+    height: 540px;
+    border: 4px solid #e3d082;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.display{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: #a28511;
+    width: 90%;
+    height: 10%;
+    margin-top: 6px;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+}
+
+.op-num-btns{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    height: 90%;
+
+}
+.op-num-btns button {
+  flex: 1;     
+  height: 64px;   
+  border-radius: 24px;   
+  font-weight: bold;
+  font-size: medium;
+  color: white;
+}
+.row1, .row2, .row3, .row4, .row5{
+    display: flex;
+    gap: 10px;
+}
+
+
+.num{
+ background-color: #42370b;
+}
+
+.op{
+ background-color: #f5d13d;
+}
