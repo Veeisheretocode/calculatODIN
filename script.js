@@ -1,10 +1,3 @@
-//our choices
-// const num1 = document.querySelector(".num1");
-// const operator = document.querySelector(".operator");
-// const num2 = document.querySelector(".num2");
-// const result = document.querySelector(".result");
-
-
 //function to get stuff we click to show up on display
 let nums = document.querySelectorAll('.num');
 for (let i=0; i< nums.length; i++){
@@ -21,6 +14,37 @@ for (let i=0; i< ops.length; i++){
     document.getElementById("display").textContent += op.textContent;
   });
 };
+
+//function to clear display
+function clearDisplay(){
+    document.getElementById("display").textContent= "";
+}
+const clear = document.querySelector(".clear");
+clear.addEventListener("click", clearDisplay);
+
+//function to use backsapce
+function backSpace(){
+    const displayElement = document.getElementById("display");
+    displayElement.textContent = displayElement.textContent.slice(0, -1);
+}
+const backspace = document.querySelector(".backspace");
+backspace.addEventListener("click", backSpace);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // const add = function(a,b){
